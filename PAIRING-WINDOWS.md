@@ -1,7 +1,9 @@
 # Make a pairing file — Mac / Windows / Linux
 
-Mirage's GPS override needs a **one-time pairing file** per iPhone. On iOS 17.4+
-(incl. iOS 26/27) it must be an **RPPairing** file — use **idevice_pair**, not
+> **On iOS 27?** You don't need this guide — Mirage pairs on the phone itself
+> (see [SETUP.md](SETUP.md)). This is for iOS 18–26.
+
+Mirage's GPS override needs a **one-time pairing file** per iPhone. On iOS 17.4+ it must be an **RPPairing** file — use **idevice_pair**, not
 the old jitterbugpair (that makes the wrong "Lockdown" format).
 
 You do this **once per iPhone** on any computer; the file is reusable forever and
@@ -23,7 +25,9 @@ works across your other tools (StikDebug, SideStore) too.
 2. Open **idevice_pair**, pick your device.
 3. Set mode to **RPPairing** (for iOS 17.4+), then click **Generate**. Tap
    **Trust** again on the phone if asked.
-4. It saves a pairing file (e.g. `<UDID>.plist` / `.mobiledevicepairing`).
+4. It saves a pairing file (e.g. `<UDID>.plist`). Some builds name it
+   `.mobiledevicepairing` — that's fine **as long as it was made in RPPairing
+   mode**. It's the *lockdown* files from SideStore/StikDebug that won't work.
 
 ## Get it onto the iPhone
 Send the file to the phone — **AirDrop** (Mac), email, or iCloud / Google Drive /
